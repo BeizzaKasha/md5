@@ -8,6 +8,7 @@ SERVER_IP = '0.0.0.0'
 
 logging.basicConfig(level=logging.DEBUG)
 
+
 def print_client_sockets(client_sockets):
     for i in range(len(client_sockets)):
         logging.debug(client_sockets[i])
@@ -27,7 +28,7 @@ def client_mesege(current_socket, client_sockets, answer, num):
             mesege = (current_socket, str(num)+","+str(answer))
             # logging.error(str(rsv[1]*1000 + num))
             messages_to_send.append(mesege)
-            return int(rsv[1])*10000
+            return int(rsv[1])*1000000
 
         elif rsv[0] == "answer":
             print(rsv[1])
@@ -51,7 +52,7 @@ logging.info("Listening for clients...")
 client_sockets = []
 messages_to_send = []
 num = 0
-# answer = hashlib.md5(str(1234590).encode()).hexdigest()
+# answer = hashlib.md5(str(1234567890).encode()).hexdigest()
 answer = "EC9C0F7EDCC18A98B1F31853B1813301"
 count = 0.01
 
@@ -63,8 +64,8 @@ while True:
         else:
             num += client_mesege(current_socket, client_sockets, answer, num)  # messages from client
             # logging.error(num)
-            if (float(num/1000000000)) > count:
-                print(str(float(num/1000000000)))
+            if (float(num/9999999999)) > count:
+                print(str(float(num/9999999999)))
                 count += 0.01
 
 

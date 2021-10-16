@@ -26,11 +26,8 @@ def findNumber(start, end, answer):
     num = start
     while num <= end:
         result = hashlib.md5(str(num).encode()).hexdigest()
-        # print(result)
-        # print(num)
         if result == answer:
             logging.info("correct")
-            # print(result)
             send = "answer" + "," + str(num)
             my_socket.send(send.encode())
             exit()
@@ -44,8 +41,6 @@ def close():
 
 
 def main():
-
-
     while True:
         data = [0, 0]
 
@@ -64,16 +59,12 @@ def main():
         answer = data[1]
         num = int(data[0])
 
-
         threads = []
         for core in range(pros):
-            t = threading.Thread(target=findNumber, args=(num, num + 10000, str(answer)))
+            t = threading.Thread(target=findNumber, args=(num, num + 1000000, str(answer)))
             threads.append(t)
             t.start()
-            num += 10000
-
-    # logging.debug(answer)
-    # close()
+            num += 1000000
 
 
 if __name__ == "__main__":

@@ -25,7 +25,7 @@ class runner:
 def findNumber(start, end, answer):
     num = start
     while num <= end:
-        result = hashlib.md5(str(num).encode()).hexdigest()
+        result = hashlib.md5(str(num).encode()).hexdigest().upper()
         # print(result)
         # print(num)
         if result == answer:
@@ -44,8 +44,6 @@ def close():
 
 
 def main():
-
-
     while True:
         data = [0, 0]
 
@@ -63,7 +61,6 @@ def main():
 
         answer = data[1]
         num = int(data[0])
-
 
         threads = []
         for core in range(pros):

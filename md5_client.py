@@ -69,8 +69,6 @@ def main():
             t.start()
             num += 10000
 
-    # logging.debug(answer)
-    # close()
 
 
 if __name__ == "__main__":

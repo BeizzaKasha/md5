@@ -52,8 +52,8 @@ logging.info("Listening for clients...")
 client_sockets = []
 messages_to_send = []
 num = 0
-answer = hashlib.md5(str(123456789).encode()).hexdigest().upper()
-# answer = "EC9C0F7EDCC18A98B1F31853B1813301"
+# answer = hashlib.md5(str(123456789).encode()).hexdigest().upper()
+answer = "EC9C0F7EDCC18A98B1F31853B1813301"
 count = 0.01
 
 while True:

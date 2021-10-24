@@ -15,13 +15,6 @@ my_socket.connect((ip, port))
 logging.info("connect to server at {0} with port {1}".format(ip, port))
 
 
-class runner:
-    def __init__(self, start, end, answer):
-        self.start = start
-        self.end = end
-        self.answer = answer
-
-
 def findNumber(start, end, answer):
     num = start
     while num <= end:

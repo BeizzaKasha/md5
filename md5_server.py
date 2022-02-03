@@ -1,7 +1,6 @@
 import select
 import logging
 import socket
-import hashlib
 
 SERVER_PORT = 5555
 SERVER_IP = '0.0.0.0'
